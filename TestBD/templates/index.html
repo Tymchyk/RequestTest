@@ -1,0 +1,37 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container mt-5">
+       <form method="post" onsubmit="return false;">
+        {%block main%}
+        {% csrf_token %}
+            
+        {{ form.as_p }}
+        {%endblock%}
+        <button type="submit" class="btn btn-primary add">Add user</button>
+       </form>
+       <table>
+        <table class="table">
+            <thead  class="table-dark">
+              <tr class="fields">
+                <th scope="col">Student name</th>
+                <th scope="col">Student surname</th>
+                <th scope="col">Student age</th>
+                <th scope="col">Delete student</th>
+              </tr>
+              
+            </thead>
+       </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src ="{%static 'js/index.js'%}"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
